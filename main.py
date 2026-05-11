@@ -5,4 +5,3 @@ Re-export the FastAPI app from server.py so both `main:app` and `server:app` wor
 """
 
 from server import app
-
