@@ -17,7 +17,7 @@ export OPENROUTER_API_KEY="sk-or-..."
 export HALLU_FREE_KEYS="jsk_your_dev_key_here"
 
 # 3. Run
-python server.py
+uvicorn main:app --host 0.0.0.0 --port 8000
 
 # 4. Verify a claim
 curl -X POST http://localhost:8000/v1/verify \
@@ -288,7 +288,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 COPY server.py .
 EXPOSE 8000
-CMD ["uvicorn", "server:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
 ```
 
 ### Docker Compose
